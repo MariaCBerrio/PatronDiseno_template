@@ -1,11 +1,8 @@
-class Te extends MaquinaBebidas {
-    // Implementación concreta del método preparar() para hacer té
+class Chocolate extends MaquinaBebidas {
+    // Implementación concreta del método preparar() para hacer chocolate
     void preparar() {
-        System.out.println("Infusionando el té");
+        System.out.println("Añadiendo chocolate...");
     }
 
-    // Implementación concreta del método addCondiments() para añadir condimentos al té
-    void addCondiments() {
-        System.out.println("Añadiendo limón");
-    }
+
 }
