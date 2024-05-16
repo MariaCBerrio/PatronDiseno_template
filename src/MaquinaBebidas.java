@@ -2,7 +2,7 @@ import java.util.Scanner;
 
 abstract class MaquinaBebidas {
     Scanner sc = new Scanner(System.in);
-    // Método template que define el esqueleto de preparación de la receta
+    // Método template que define la preparación de la bebida
     public void prepararReceta() {
         String base = elegirBase();
         System.out.println("");
@@ -19,7 +19,8 @@ abstract class MaquinaBebidas {
     // Métodos abstractos que deben ser implementados por las subclases
     abstract void preparar();
 
-    String elegirBase() {
+    // Métodos comunes que pueden ser utilizados por todas las subclases
+    public String elegirBase() {
         String base;
         int seleccion;
         System.out.println("¿Qué base desea para su bebida:");
@@ -33,18 +34,16 @@ abstract class MaquinaBebidas {
         }
         return base;
     }
-
-    // Métodos comunes que pueden ser utilizados por todas las subclases
-    void hervir(String base) {
+    public void hervir(String base) {
         System.out.println("Hirviendo " + base + "...");
     }
 
-    void servir() {
+    public void servir() {
         System.out.println("Sirviendo bebida...");
     }
 
     // Método hook que puede ser sobreescrito por las subclases para personalizar el comportamiento
-    boolean agregaAzucar() {
+    public boolean agregaAzucar() {
         int seleccion;
         System.out.println("¿Desea azúcar para su bebida?");
         System.out.println("1.Sí");
